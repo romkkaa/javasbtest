@@ -15,12 +15,15 @@ public class PurchaseDetails {
     private String name;
     private String lastName;
     private int age;
-    private PurchaseItem item;
+    private Item item;
     private long itemCount;
     private double amount;
     private Date date;
 
-    public PurchaseDetails(long id, String name, String lastName, int age, PurchaseItem item, long itemCount, double amount, Date date) {
+    public PurchaseDetails() {
+    }
+
+    public PurchaseDetails(long id, String name, String lastName, int age, Item item, long itemCount, double amount, Date date) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -33,6 +36,10 @@ public class PurchaseDetails {
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -59,11 +66,11 @@ public class PurchaseDetails {
         this.age = age;
     }
 
-    public PurchaseItem getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(PurchaseItem item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 

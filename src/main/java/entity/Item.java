@@ -6,16 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class PurchaseItem {
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
 
-    public PurchaseItem(long id, String name) {
+    public Item(long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Item() {
     }
 
     public long getId() {
