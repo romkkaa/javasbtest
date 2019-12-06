@@ -1,11 +1,11 @@
-package controller;
+package task.controller;
 
-import entity.PurchaseDetails;
+import task.entity.PurchaseDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import repository.PurchaseDetailsRepository;
+import task.repository.PurchaseDetailsRepository;
 
 import java.util.List;
 
