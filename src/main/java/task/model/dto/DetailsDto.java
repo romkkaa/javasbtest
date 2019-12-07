@@ -1,37 +1,37 @@
-package task.entity;
+package task.model.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.xml.bind.annotation.*;
 import java.util.Date;
 
-@Entity
-public class PurchaseDetails {
+@XmlRootElement(name = "details")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class DetailsDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @XmlElement(name = "id")
     private long id;
+
+    @XmlElement(name = "item_id")
+    private long itemId;
+
+    @XmlElement(name = "name")
     private String name;
+
+    @XmlElement(name = "last_name")
     private String lastName;
+
+    @XmlElement(name = "age")
     private int age;
-    private Item item;
+
+    @XmlElement(name = "item_count")
     private long itemCount;
+
+    @XmlElement(name = "amount")
     private double amount;
-    private Date date;
 
-    public PurchaseDetails() {
-    }
+    @XmlElement(name = "purchase_date")
+    private Date purchaseDate;
 
-    public PurchaseDetails(long id, String name, String lastName, int age, Item item, long itemCount, double amount, Date date) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-        this.item = item;
-        this.itemCount = itemCount;
-        this.amount = amount;
-        this.date = date;
+    public DetailsDto() {
     }
 
     public long getId() {
@@ -66,12 +66,12 @@ public class PurchaseDetails {
         this.age = age;
     }
 
-    public Item getItem() {
-        return item;
+    public long getItemId() {
+        return itemId;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setItemEntity(long itemId) {
+        this.itemId = itemId;
     }
 
     public long getItemCount() {
@@ -90,11 +90,12 @@ public class PurchaseDetails {
         this.amount = amount;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getPurchaseDate() {
+        return purchaseDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
+
 }

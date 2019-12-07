@@ -1,0 +1,2 @@
+create table items (id int primary key not null generated always as identity), (name varchar(128) not null);
+insert into items (name) values ('Телевизор'), ('Смартфон'), ('Соковыжималка'), ('Наушники'), ('Клавиатура');

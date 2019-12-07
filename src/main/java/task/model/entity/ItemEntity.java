@@ -1,24 +1,24 @@
-package task.entity;
+package task.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Item {
+@Table(name = "item")
+public class ItemEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "name")
     private String name;
 
-    public Item(long id, String name) {
+    public ItemEntity(long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Item() {
+    public ItemEntity() {
     }
 
     public long getId() {
