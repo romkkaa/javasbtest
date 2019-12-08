@@ -15,15 +15,16 @@ public class DetailsMapper {
 
     private ModelMapper mapper = new ModelMapper();
 
-    public DetailsEntity mapDtoToEntity(DetailsDto dto) {
-        DetailsEntity entity = new DetailsEntity();
-        entity = mapper.map(dto, DetailsEntity.class);
-        entity.setItemEntity(repository.findById(dto.getItemId()).get());
-        return entity;
+    public DetailsEntity mapDtoToEntity(DetailsDto detailsDto) {
+        var detailsEntity = mapper.map(detailsDto, DetailsEntity.class);
+        detailsEntity.setItemEntity(repository.findById(detailsDto.getItemId()).get());
+        return detailsEntity;
     }
 
-    public DetailsDto mapEntityToDto(DetailsEntity entity) {
-        return mapper.map(entity, DetailsDto.class);
+    public DetailsDto mapEntityToDto(DetailsEntity detailsEntity) {
+        var detailsDto = mapper.map(detailsEntity, DetailsDto.class);
+        detailsDto.setItemId(detailsEntity.getItemEntity().getId());
+        return detailsDto;
     }
 
 }

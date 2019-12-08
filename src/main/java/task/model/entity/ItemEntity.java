@@ -13,11 +13,6 @@ public class ItemEntity {
     @Column(name = "name")
     private String name;
 
-    public ItemEntity(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public ItemEntity() {
     }
 

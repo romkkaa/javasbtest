@@ -70,7 +70,7 @@ public class DetailsDto {
         return itemId;
     }
 
-    public void setItemEntity(long itemId) {
+    public void setItemId(long itemId) {
         this.itemId = itemId;
     }
 
