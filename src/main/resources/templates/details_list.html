@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<div id="main_block">
+    <h1>HOME HERE</h1>
+    <a href="/details/add">Add Purchase Details</a>
+    <table id="purchases">
+        <caption>Purchase Details</caption>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Item</th>
+            <th>Count</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>?</th>
+            <th>?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${details.empty}">
+            <td colspan="8"> No Purchase Details Available </td>
+        </tr>
+        <tr th:each="d : ${details}">
+            <td><span th:text="${d.id}"></span></td>
+            <td><span th:text="${d.name}"></span></td>
+            <td><span th:text="${d.lastName}"></span></td>
+            <td><span th:text="${d.age}"></span></td>
+            <td><span th:text="${d.itemEntity.name}"></span></td>
+            <td><span th:text="${d.itemCount}"></span></td>
+            <td><span th:text="${d.amount}"></span></td>
+            <td><span th:text="${d.purchaseDate}"></span></td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<div id="main_block">
+
+    <form id="details_add">
+        <input id="name" placeholder="Name" type="text">
+        <input id="surname" placeholder="Surname" type="text">
+        <input id="age" placeholder="Age" type="text">
+        <select id="item_id">
+            <option th:each="i : ${items}" th:value="${i.id}" th:text="${i.name}"></option>
+        </select>
+        <input id="item_count" placeholder="Item Count" type="text">
+        <input id="item_amount" placeholder="Item Amount" type="text">
+    </form>
+
+    <button>Submit</button>
+
+</div>
+
+</body>
+</html>
